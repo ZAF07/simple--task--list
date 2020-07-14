@@ -165,7 +165,7 @@ app.get('/about', (req, res) => {
 })
 
 
-app.listen(3000, (req, res) => {
+app.listen(process.env.PORT || 3000, (req, res) => {
   console.log('SERVER ACTIVE: http://localhost:3000');
   console.log(date.getDate());
 })
