@@ -1,0 +1,34 @@
+
+<%- include('layouts/header'); -%>
+    <div class="container card mt-5 mb-5">
+      <div class="card p-1 mb-3 mt-4">
+        <h1 class="text-center"> <%= listTitle %> </h1>
+      </div>
+
+      <div class="row">
+
+
+
+        <div class="container">
+
+          <% newListItem.forEach(item => { %>
+          <form action="/delete" method="post">
+            <div class="card p-1 text-center">
+              <input id="checkbox" type="checkbox" name="checkbox" value="<%= item._id %>" onChange="this.form.submit()" >
+              <p > <%=item.name %> </p>
+            </div>
+            <input type="hidden" name="lName" value="<%= listTitle %>"></input>
+          </form>
+            <% }) %>
+            <hr>
+          <form class="" action="/" method="post">
+            <div class="form-group text-center">
+              <label for="todo">New Task</label>
+              <input class="form-control" type="text" name="newItem" placeholder="Add new Task" autocomplete="false">
+              <button class="btn btn-md btn-success mt-2 rounded-circle" type="submit" name="list" value="<%= listTitle %>">+</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <%- include('layouts/footer'); -%>

@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #e67e22;
+  
+}
+
+input:checked+p {
+  text-decoration: line-through;
+  text-decoration-color: #000;
+}
+
+::placeholder {
+  opacity: .5 !important;
+  color: #555 !important;
+}
